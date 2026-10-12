@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+
+  backend:
+
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+
+    container_name: agentfin_backend
+
+    ports:
+      - "8000:8000"
+
+    env_file:
+      - ../backend/.env
+
+    depends_on:
+      - postgres
+
+  postgres:
+
+    image: postgres:16
+
+    container_name: agentfin_db
+
+    environment:
+
+      POSTGRES_DB: agentfin
+
+      POSTGRES_USER: postgres
+
+      POSTGRES_PASSWORD: password
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+
+  postgres_data:

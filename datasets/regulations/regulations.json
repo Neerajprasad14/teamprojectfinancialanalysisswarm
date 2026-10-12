@@ -1,0 +1,25 @@
+{
+  "AML": {
+    "AML_LIMIT": 1000000,
+    "REPORT_REQUIRED": true,
+    "MAX_CASH_TRANSACTION": 500000
+  },
+
+  "KYC": {
+    "KYC_REQUIRED": true,
+    "MINIMUM_AGE": 18,
+    "MANDATORY_DOCUMENTS": [
+      "Aadhaar",
+      "PAN",
+      "Passport"
+    ]
+  },
+
+  "TRANSACTION": {
+    "CROSS_BORDER_LIMIT": 500000,
+    "HIGH_RISK_COUNTRIES": [
+      "Country_A",
+      "Country_B"
+    ]
+  }
+}
